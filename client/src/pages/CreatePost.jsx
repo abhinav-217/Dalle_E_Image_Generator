@@ -45,7 +45,7 @@ const CreatePost = () => {
         navigate('/')
 
       } catch (error) {
-        alert(error.message);
+        alert("Error Client ",error.message);
       }
       finally {
         setLoading(false)

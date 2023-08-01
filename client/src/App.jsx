@@ -1,6 +1,6 @@
 import React from 'react'
 import {BrowserRouter,Link,Route,Routes} from 'react-router-dom';
-import {logo,newLogo} from './assets';
+import {newLogo} from './assets';
 import {Home, CreatePost,SubmitPost} from './pages';
 import './App.css'
 const app = () => {
@@ -8,9 +8,9 @@ const app = () => {
       <BrowserRouter>
         <header className="w-full flex justify-between items-center bg-white sm:px-8 px-4 py-4 border-b border-b-[#e6ebf4]">
         <Link to = '/'>
-          <img src = {newLogo} alt = 'logo' className = "w-15 object-contain "/>
+          <img src = {newLogo} alt = 'logo' className = "w-12 object-contain "/>
         </Link>
-        <Link to = '/create-post' className = "font-inter font-medium bg-[#6409ff] text-white px-4 py-2 rounded-md">
+        <Link to = '/create-post' className = "font-inter font-medium bg-[#ff76cd] text-white px-4 py-2 rounded-md">
           Create
         </Link>
         {/*<Link to = '/submit-post' className = "font-inter font-medium bg-[#6409ff] text-white px-4 py-2 rounded-md">

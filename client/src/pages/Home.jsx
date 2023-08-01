@@ -1,7 +1,6 @@
 import React from 'react'
 import { Loader, Card, FormField } from '../components'
 import { useState, useEffect } from 'react'
-
 const RenderCards = ({ data, title }) => {
   if (data?.length > 0) {
     // console.log(data)
@@ -16,7 +15,6 @@ const Home = () => {
   const [allPosts, setAllPosts] = useState(null);
   const [searchText, setSearchText] = useState('');
   const [searchResults, setSearchResults] = useState(null);
-  const [searchTimeout, setSearchTimeout] = useState(null);
   useEffect(() => {
     const fetchPost = async () => {
       setLoading(true);
@@ -27,10 +25,12 @@ const Home = () => {
         })
         if (response.ok) {
           const result = await response.json();
+          // result.data is the array we are looking for 
           setAllPosts(result.data.reverse());
         }
       } catch (error) {
-        alert(error.message)
+        alert("Unable to fetch Posts Comeback after a while")
+        console.log(error.message);
       }
       finally {
         setLoading(false);
@@ -40,14 +40,13 @@ const Home = () => {
   }, [])
 
   const handleSearchChange = (e)=>{
-    clearTimeout(searchTimeout)
     setSearchText(e.target.value);
-    setSearchTimeout(setTimeout(() => {
+    setTimeout(() => {
       console.log(searchText)
       const searchResult = allPosts.filter((item) => item.name.toLowerCase().includes(searchText.toLowerCase()) || item.prompt.toLowerCase().includes(searchText.toLowerCase()));
       console.log(searchResult);
       setSearchResults(searchResult)
-    }, 500))
+    }, 500)
   }
 
   return (

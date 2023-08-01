@@ -22,6 +22,6 @@ app.listen(port, () => {
     connectDB(process.env.MONGODB_URL)
     console.log(`Example app listening on port ${port}`)
   } catch (error) {
-    console.log(error)
+    console.log("Developer There is a error, ",error)
   }
 })

@@ -31,9 +31,9 @@ router.route('/').post(async (req, res) => {
             prompt,
             photo: photoUrl.url,
         })
-        res.status(201).json({ success: true, data: newPost })
+        res.status(200).json({ success: true, data: newPost })
     } catch (error) {
-        console.log(error);
+        console.log("Server Error 36",error);
         res.status(500).json({success: false, message: error})
     }
 })
