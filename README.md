@@ -31,5 +31,11 @@ At its core, the project allows users to interact with an intuitive web interfac
 
 <img width="926" alt="image" src="https://github.com/abhinav-217/Dalle_E_Image_Generator/assets/85096129/0c9f0474-a25d-485b-b214-7dced47f78b2">
 
+Still there are some things which are going to be added in this:-
+## File Format Option for downloading images
+## Image Caption Generation using Django
+## Adding a Modal for showing generated image in bigger size
+And much More......
+
 
 
